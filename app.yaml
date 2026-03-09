@@ -1,0 +1,13 @@
+runtime: python
+env: flex 
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+    operating_system: "ubuntu22"
+    runtime_version: "3.12"
+
+env_variables:
+  CLOUD_STORAGE_BUCKET: qwiklabs-gcp-00-c546791940d8
+
+manual_scaling:
+  instances: 1
